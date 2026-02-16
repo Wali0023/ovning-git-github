@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@property --project-bg-angle {
+    syntax: "<angle>";
+    initial-value: 45deg;
+    inherits: false;
+}
+
+:root {
+    --color-blue: hsl(200, 100%, 50%, 1);
+    --color-pink: hsl(330, 100%, 50%, 1);
+    --color-orange: hsl(30, 100%, 50%, 1);
+    --color-white: hsl(0, 0%, 100%, 1);
+    --menu-border: hsl(0, 0%, 100%, 0.2);
+
+    --project-width: 80vw;
+    --project-max-width: 900px;
+    --project-padding: 3rem;
+    --project-bg-angle: 45deg;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    display: box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Poppins", system-ui, sans-serif;
+    color: var(--color-white);
+    background: linear-gradient(var(--project-bg-angle),
+            var(--color-blue),
+            var(--color-pink),
+            var(--color-orange));
+    animation: rotateGradient 60s ease infinite;
+    min-height: 100vh;
+    width: var(--project-width);
+    max-width: var(--project-max-width);
+    margin-inline: auto;
+}
+
+main {
+    padding: var(--project-padding);
+
+}
+
+header {
+    padding-bottom: var(--project-padding);
+}
+
+nav {
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--menu-border);
+    border-radius: 32px;
+    background-clip: padding-box;
+    padding: 1rem 2rem;
+}
+
+nav>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-white);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 32px;
+    margin-top: var(--project-padding);
+
+    >span {
+        display: flex;
+        font-weight: 100;
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        --project-bg-angle: 0deg;
+    }
+
+    100% {
+        --project-bg-angle: 360deg;
+    }
+}
+
+.image-container {
+    display: flex;
+    gap: 10rem;
+    padding: 3rem 0 3rem 2rem;
+}
