@@ -23,6 +23,7 @@
     margin: 0;
     padding: 0;
     display: box;
+    overflow:hidden;
 }
 
 body {
@@ -48,12 +49,12 @@ main {
 }
 
 header {
+    padding-top: var(--project-padding);
     padding-bottom: var(--project-padding);
 }
 
-nav {
+nav, footer {
     display: flex;
-    justify-self: center;
     justify-content: space-between;
     backdrop-filter: blur(16px);
     background: rgba(255, 255, 255, 0.1);
@@ -110,6 +111,7 @@ h1 {
     align-items: center;
     line-height: 32px;
     margin-top: var(--project-padding);
+    margin-bottom: var(--project-padding);
 
     >span {
         display: flex;
@@ -129,6 +131,17 @@ h1 {
 
 .image-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10rem;
     padding: 3rem 0 3rem 2rem;
+    >div>img{
+        filter: brightness(0) invert(1);
+    }
+}
+footer{
+    margin-bottom:var(--project-padding);
+    >h2{
+        font-weight:100;
+    }
 }
